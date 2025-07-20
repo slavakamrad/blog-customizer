@@ -1,0 +1,171 @@
+.selectWrapper {
+  position: relative;
+  width: 100%;
+  margin-bottom: 16px;
+}
+
+.select {
+  width: 100%;
+  padding: 12px 0 11px 24px;
+  border: 1px solid #E0E0E0;
+  border-radius: 8px;
+  background-color: white;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 18px;
+  color: #333;
+  cursor: pointer;
+  outline: none;
+  transition: border-color 0.3s;
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-image: none;
+  
+}
+
+
+.option {
+  position: relative;
+  font-size: 18px;
+  &:hover {
+    background-color: #ee0d81;
+  }
+}
+
+
+// Цветные маркеры для каждого варианта
+.option-black {
+  &::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: #000000;
+    border-radius: 2px;
+    display: inline-block;
+  }
+}
+
+.option-white {
+  &::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: #FFFFFF;
+    border: 1px solid #E0E0E0;
+    border-radius: 2px;
+    display: inline-block;
+  }
+}
+
+.option-gray {
+  &::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: #C4C4C4;
+    border-radius: 2px;
+    display: inline-block;
+  }
+}
+
+.option-pink {
+  &::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: #FEAFE8;
+    border-radius: 2px;
+    display: inline-block;
+  }
+}
+
+.option-fuchsia {
+  &::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: #FD24AF;
+    border-radius: 2px;
+    display: inline-block;
+  }
+}
+
+.option-yellow {
+  &::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: #FFC802;
+    border-radius: 2px;
+    display: inline-block;
+  }
+}
+
+.option-green {
+  &::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: #80D994;
+    border-radius: 2px;
+    display: inline-block;
+  }
+}
+
+.option-blue {
+  &::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: #6FC1FD;
+    border-radius: 2px;
+    display: inline-block;
+  }
+}
+
+.option-purple {
+  &::before {
+    content: '';
+    position: absolute;
+    left: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 16px;
+    height: 16px;
+    background-color: #5F0DEE;
+    border-radius: 2px;
+    display: inline-block;
+  }
+}
