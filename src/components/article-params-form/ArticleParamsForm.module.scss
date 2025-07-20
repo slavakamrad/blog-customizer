@@ -1,11 +1,12 @@
 .container {
 	position: fixed;
 	left: 0;
-	width: 616px;
+	width: 614px;
 	height: 100%;
-	overflow: scroll;
-	transform: translate(-616px);
+	overflow: auto;
+	transform: translate(-614px);
 	transition: transform 0.5s ease;
+	
 }
 
 .container_open {
@@ -14,16 +15,16 @@
 
 .form {
 	display: flex;
-	flex-shrink: 0;
+ 
 	flex-direction: column;
 	box-sizing: border-box;
-	width: 616px;
+	justify-content: space-between;
 	height: auto;
 	min-height: 100%;
-	padding: 50px 31px;
+	padding: 50px 30px;
 	background-color: #ffffff;
-	border-right: 1px solid #000000;
-	gap: 50px;
+ 
+ 
 }
 
 .title {
@@ -35,53 +36,11 @@
 	text-transform: uppercase;
 }
 
-.section {
-	display: flex;
-	flex-direction: column;
-	gap: 4px;
-
-}
-
-.sectionTitle {
-	font-family: 'Open Sans';
-	font-style: normal;
-	font-weight: 800;
-	font-size: 12px;
-	line-height: 16px;
-	text-transform: uppercase;
-}
-
-.sizeOptions {
-	display: flex; 
-}
-
-.sizeOption {
-	font-family: 'Open Sans';
-	text-transform: uppercase;
-	font-size: 18px;
-	width: 123px;
-	background-color: #FFF;
-	&:hover {
-   background-color: #FFEDAB;
-  }
- 
-}
-
-.sizeOption_selected {
-	background-color: #FFC802;
-}
- 
-.divider {
- 
-	stroke: #D7D7D7;
-	width: 100%;
-	opacity: 100%;
-}
-
 .bottomContainer {
 	display: flex;
 	justify-content: space-between;
-	margin-top: auto;
+	position: relative;
+	bottom: 0;
 }
  
  
