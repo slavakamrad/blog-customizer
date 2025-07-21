@@ -2,6 +2,7 @@ import { ArrowButton } from 'src/ui/arrow-button';
 import { Button } from 'src/ui/button';
 import { RadioGroup } from 'src/ui/radio-group';
 import { Select } from 'src/ui/select';
+import { Text } from 'src/ui/text';
 import { Separator } from 'src/ui/separator';
 import styles from './ArticleParamsForm.module.scss';
 import { FormEvent, useState } from 'react';
@@ -14,6 +15,7 @@ import {
 	defaultArticleState,
 	ArticleStateType,
 } from '../../constants/articleProps';
+import clsx from 'clsx';
 
 type ArticleParamsFormProps = {
 	onApply: (state: ArticleStateType) => void;
@@ -24,12 +26,12 @@ export const ArticleParamsForm = ({
 	onApply,
 	onReset,
 }: ArticleParamsFormProps) => {
-	const [isOpen, setIsOpen] = useState<boolean>(false);
+	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 	const [localState, setLocalState] =
 		useState<ArticleStateType>(defaultArticleState);
 
 	const handleOpen = () => {
-		setIsOpen(!isOpen);
+		setIsMenuOpen(!isMenuOpen);
 		setLocalState(defaultArticleState);
 	};
 
@@ -52,13 +54,13 @@ export const ArticleParamsForm = ({
 
 	return (
 		<>
-			<ArrowButton isOpen={isOpen} onClick={handleOpen} />
+			<ArrowButton isOpen={isMenuOpen} onClick={handleOpen} />
 			<aside
-				className={`${styles.container} ${
-					isOpen ? styles.container_open : ''
-				}`}>
+				className={clsx(styles.container, isMenuOpen && styles.container_open)}>
 				<form className={styles.form} onSubmit={handleSubmit}>
-					<h1 className={styles.title}>ЗАДАЙТЕ ПАРАМЕТРЫ</h1>
+					<Text weight={800} size={31}>
+						ЗАДАЙТЕ ПАРАМЕТРЫ
+					</Text>
 
 					<Select
 						options={fontFamilyOptions}
