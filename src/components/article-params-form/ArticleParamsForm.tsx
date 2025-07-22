@@ -5,7 +5,7 @@ import { Select } from 'src/ui/select';
 import { Text } from 'src/ui/text';
 import { Separator } from 'src/ui/separator';
 import styles from './ArticleParamsForm.module.scss';
-import { FormEvent, useState } from 'react';
+import { FormEvent, useRef, useState } from 'react';
 import {
 	fontFamilyOptions,
 	fontColors,
@@ -16,6 +16,7 @@ import {
 	ArticleStateType,
 } from '../../constants/articleProps';
 import clsx from 'clsx';
+import { useOutsideClickClose } from 'src/ui/select/hooks/useOutsideClickClose';
 
 type ArticleParamsFormProps = {
 	onApply: (state: ArticleStateType) => void;
@@ -29,6 +30,14 @@ export const ArticleParamsForm = ({
 	const [isMenuOpen, setIsMenuOpen] = useState<boolean>(false);
 	const [localState, setLocalState] =
 		useState<ArticleStateType>(defaultArticleState);
+
+	const asideRef = useRef<HTMLDivElement>(null);
+
+	useOutsideClickClose({
+		isOpen: isMenuOpen,
+		rootRef: asideRef,
+		onChange: setIsMenuOpen,
+	});
 
 	const handleOpen = () => {
 		setIsMenuOpen(!isMenuOpen);
@@ -56,6 +65,7 @@ export const ArticleParamsForm = ({
 		<>
 			<ArrowButton isOpen={isMenuOpen} onClick={handleOpen} />
 			<aside
+				ref={asideRef}
 				className={clsx(styles.container, isMenuOpen && styles.container_open)}>
 				<form className={styles.form} onSubmit={handleSubmit}>
 					<Text weight={800} size={31}>
